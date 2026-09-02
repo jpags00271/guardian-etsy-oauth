@@ -1,15 +1,14 @@
 {
   "name": "guardian-etsy-oauth",
-  "version": "1.0.0",  "type": "module",
+  "version": "1.0.0",
+  "type": "module",
   "description": "OAuth callback handler for Guardian Custom Creations Etsy integration",
   "private": true,
   "scripts": {
     "dev": "vercel dev",
     "build": "mkdir -p public"
   },
-  "dependencies": {
-    "axios": "^1.7.7"
-  },
+  "dependencies": {},
   "engines": {
     "node": "24.x"
   }
