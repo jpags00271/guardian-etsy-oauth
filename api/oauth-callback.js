@@ -1,14 +1,16 @@
 /**
  * Etsy OAuth Callback Handler with PKCE
- * Guardian Custom Creations
+ * Guardian Creatives
  * Endpoint: /api/oauth-callback
  *
  * Receives authorization code from Etsy OAuth redirect
  * Decodes verifier from state parameter and exchanges code for access token
+ * Stores token in Vercel KV for create-listing endpoint
  */
 
 const https = require('https');
 const { URLSearchParams } = require('url');
+const { kv } = require('@vercel/kv');
 
 module.exports = async function handler(req, res) {
   const { code, state, error, error_description } = req.query;
@@ -106,8 +108,20 @@ module.exports = async function handler(req, res) {
       return res.status(response.statusCode).json(responseData);
     }
 
+    // Store access token in Vercel KV
+    await kv.set('guardian-creatives:etsy:access_token', responseData.access_token, {
+      ex: responseData.expires_in,
+    });
+    if (responseData.refresh_token) {
+      await kv.set('guardian-creatives:etsy:refresh_token', responseData.refresh_token);
+    }
+
+    console.log('[OAuth Callback] Tokens stored in KV');
+
     // Success: return tokens
     return res.status(200).json({
+      success: true,
+      message: 'OAuth authentication successful. Access token stored.',
       access_token: responseData.access_token,
       refresh_token: responseData.refresh_token,
       expiresIn: responseData.expires_in,
