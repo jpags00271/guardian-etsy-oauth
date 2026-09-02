@@ -7,10 +7,10 @@
  * Decodes verifier from state parameter and exchanges code for access token
  */
 
-import https from 'https';
-import { URLSearchParams } from 'url';
+const https = require('https');
+const { URLSearchParams } = require('url');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { code, state, error, error_description } = req.query;
 
   console.log('[OAuth Callback] Received:', {
@@ -120,4 +120,4 @@ export default async function handler(req, res) {
       error_description: err.message,
     });
   }
-}
+};
