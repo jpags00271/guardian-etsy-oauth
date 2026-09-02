@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "vercel dev",
-    "build": "mkdir -p public"
+    "build": "echo build complete"
   },
   "dependencies": {},
   "engines": {
