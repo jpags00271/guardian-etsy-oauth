@@ -8,8 +8,10 @@
     "dev": "vercel dev",
     "build": "echo build complete"
   },
-  "dependencies": {},
   "engines": {
     "node": "24.x"
+  },
+  "devDependencies": {
+    "vercel": "^59.11.2"
   }
 }
