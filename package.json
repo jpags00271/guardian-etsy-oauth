@@ -1,7 +1,6 @@
 {
   "name": "guardian-etsy-oauth",
   "version": "1.0.0",
-  "type": "module",
   "description": "OAuth callback handler for Guardian Custom Creations Etsy integration",
   "private": true,
   "scripts": {
