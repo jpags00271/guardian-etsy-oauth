@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 1feb7345965d9a0c517c825a9c519f8aa7717927 Jason Pagliaro <jason@howtosellyourstuff.com> 1788383828 -0400	initial pull
+1feb7345965d9a0c517c825a9c519f8aa7717927 26a873be77036ae9979d489f5c312f661cdd6453 Jason Pagliaro <jason@howtosellyourstuff.com> 1788383869 -0400	commit: Fix: replace axios with Node.js https module and fix directory structure
+26a873be77036ae9979d489f5c312f661cdd6453 a4dd877a571ee9ebecfdce7f6873c153ca98580c Jason Pagliaro <jason@howtosellyourstuff.com> 1788385234 -0400	commit: Remove root-level oauth-callback.js (use api/oauth-callback.js instead)
+a4dd877a571ee9ebecfdce7f6873c153ca98580c b4eda9173245aeb255a92b1bf5c23adffc33f079 Jason Pagliaro <jason@howtosellyourstuff.com> 1788385825 -0400	commit: Remove axios dependency - use Node's built-in https module
+b4eda9173245aeb255a92b1bf5c23adffc33f079 f3db94fb60a17e56b6378c6228ee69ec2e07891d Jason <jason@guardiancustomcreations.com> 1788386071 +0000	commit: Fix build script - remove empty public directory requirement
+f3db94fb60a17e56b6378c6228ee69ec2e07891d fb793bfe33248b24da56a6284d74c34504199215 Jason Pagliaro <jason@howtosellyourstuff.com> 1788387037 -0400	commit: Add vercel.json for API-only configuration
+fb793bfe33248b24da56a6284d74c34504199215 346ea5eedbd01c29057b11623d318141896141e3 Jason <jason@guardiancustomcreations.com> 1788389228 +0000	commit: Add vercel as dev dependency
